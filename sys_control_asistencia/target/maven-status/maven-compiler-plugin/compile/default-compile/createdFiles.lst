@@ -1,2 +1,3 @@
 com\mycompany\sys_control_asistencia\Sys_control_asistencia.class
 com\mycompany\sys_control_asistencia\Empleado.class
+com\mycompany\sys_control_asistencia\Turno.class
