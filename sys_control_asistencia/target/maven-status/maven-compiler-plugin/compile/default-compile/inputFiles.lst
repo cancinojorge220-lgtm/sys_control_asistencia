@@ -1,20 +1,14 @@
-<<<<<<< HEAD
-C:\Users\David\Desktop\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\com\mycompany\sys_control_asistencia\Turno.java
-C:\Users\David\Desktop\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\com\mycompany\sys_control_asistencia\Empleado.java
-C:\Users\David\Desktop\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\com\mycompany\sys_control_asistencia\Sys_control_asistencia.java
-=======
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\GUI\Marcar_Asistencia.java
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\GUI\Login.java
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\com\mycompany\sys_control_asistencia\Turno.java
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\GUI\Inicio.java
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\GUI\Registro_Empleado.java
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\com\mycompany\sys_control_asistencia\Sys_control_asistencia.java
-J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\GUI\Emplea.java
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\GUI\Permiso.java
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\GUI\Registro_Turno.java
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\GUI\Reporte.java
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\GUI\Turno.java
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\com\mycompany\sys_control_asistencia\Empleado.java
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\GUI\MainFrame.java
+J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\GUI\Empleado.java
 J:\UPN\ciclo 5\programacion orientado a objetos\proyecto\mi_proyecto_asistencia\sys_control_asistencia\src\main\java\GUI\Asistencia.java
->>>>>>> e7b5330 (agregue ventanas gui)

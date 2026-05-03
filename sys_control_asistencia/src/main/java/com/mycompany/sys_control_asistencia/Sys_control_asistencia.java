@@ -1,10 +1,16 @@
 package com.mycompany.sys_control_asistencia;
+import GUI.Login;
+import GUI.MainFrame;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
 public class Sys_control_asistencia {
 
     public static void main(String[] args) {
+        
+        MainFrame main=new MainFrame();
+        main.setVisible(true);
+        
         ArrayList<Empleado> lista = new ArrayList<>();
         
         //Creación de Turnos y Roles

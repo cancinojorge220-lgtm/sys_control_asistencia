@@ -16,7 +16,10 @@ public class MainFrame extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     public MainFrame() {
+        Login lo = new Login(this, true); // this = tu JFrame principal
+        lo.setVisible(true);
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
