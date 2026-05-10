@@ -24,6 +24,7 @@ public class MainFrame extends javax.swing.JFrame {
         //FUNCION PARA CENTRAR VENTANA
         this.setLocationRelativeTo(null);
         
+        //
         Inicio inicio = new Inicio();
         JpContenedor.removeAll();
         JpContenedor.setLayout(new java.awt.BorderLayout()); 
