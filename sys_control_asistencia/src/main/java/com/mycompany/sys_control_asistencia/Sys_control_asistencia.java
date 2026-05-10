@@ -11,6 +11,9 @@ public class Sys_control_asistencia {
         MainFrame main=new MainFrame();
         main.setVisible(true);
         
+        
+        
+        /*
         ArrayList<Empleado> lista = new ArrayList<>();
         
         //Creación de Turnos y Roles
@@ -42,6 +45,6 @@ public class Sys_control_asistencia {
         for (Empleado emp : lista) {
             System.out.println(emp);
         }       
-        
+        */
     }
 }

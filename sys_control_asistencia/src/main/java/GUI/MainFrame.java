@@ -4,7 +4,6 @@
  */
 package GUI;
 
-import java.awt.BorderLayout;
 
 /**
  *
@@ -16,10 +15,21 @@ public class MainFrame extends javax.swing.JFrame {
      * Creates new form MainFrame
      */
     public MainFrame() {
-        Login lo = new Login(this, true); // this = tu JFrame principal
+        //INICIALIZANDO VENTANA LOGIN 
+        Login lo = new Login(this, true); // 
         lo.setVisible(true);
+        
         initComponents();
+        
+        //FUNCION PARA CENTRAR VENTANA
         this.setLocationRelativeTo(null);
+        
+        Inicio inicio = new Inicio();
+        JpContenedor.removeAll();
+        JpContenedor.setLayout(new java.awt.BorderLayout()); 
+        JpContenedor.add(inicio, java.awt.BorderLayout.CENTER);
+        JpContenedor.revalidate();
+        JpContenedor.repaint();
     }
 
     /**
@@ -37,17 +47,16 @@ public class MainFrame extends javax.swing.JFrame {
         jMenuItem12 = new javax.swing.JMenuItem();
         jMenu7 = new javax.swing.JMenu();
         JpContenedor = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem9 = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem3 = new javax.swing.JMenuItem();
         jMenuItem4 = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
         jMenuItem5 = new javax.swing.JMenuItem();
-        jMenuItem6 = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
         jMenuItem7 = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
@@ -64,20 +73,33 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu7.setText("jMenu7");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
-        JpContenedor.setBackground(new java.awt.Color(255, 255, 255));
+        JpContenedor.setBackground(new java.awt.Color(31, 41, 55));
+        JpContenedor.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/IMG/logo 2.png"))); // NOI18N
 
         javax.swing.GroupLayout JpContenedorLayout = new javax.swing.GroupLayout(JpContenedor);
         JpContenedor.setLayout(JpContenedorLayout);
         JpContenedorLayout.setHorizontalGroup(
             JpContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 800, Short.MAX_VALUE)
+            .addGroup(JpContenedorLayout.createSequentialGroup()
+                .addGap(144, 144, 144)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(156, Short.MAX_VALUE))
         );
         JpContenedorLayout.setVerticalGroup(
             JpContenedorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 590, Short.MAX_VALUE)
+            .addGroup(JpContenedorLayout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(130, Short.MAX_VALUE))
         );
 
+        jMenu1.setBackground(new java.awt.Color(31, 41, 55));
+        jMenu1.setForeground(new java.awt.Color(31, 41, 55));
         jMenu1.setText("Sistema");
         jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -97,11 +119,9 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
-        jMenuItem2.setText("Salir");
-        jMenu1.add(jMenuItem2);
-
         jMenuBar2.add(jMenu1);
 
+        jMenu2.setBackground(new java.awt.Color(31, 41, 55));
         jMenu2.setText("Gestión");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -114,10 +134,17 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu2.add(jMenuItem3);
 
         jMenuItem4.setText("Turnos");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem4);
 
         jMenuBar2.add(jMenu2);
 
+        jMenu3.setBackground(new java.awt.Color(31, 41, 55));
+        jMenu3.setForeground(new java.awt.Color(31, 41, 55));
         jMenu3.setText("Asistencia");
         jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -129,11 +156,10 @@ public class MainFrame extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem5);
 
-        jMenuItem6.setText("Ver Asistencias");
-        jMenu3.add(jMenuItem6);
-
         jMenuBar2.add(jMenu3);
 
+        jMenu4.setBackground(new java.awt.Color(31, 41, 55));
+        jMenu4.setForeground(new java.awt.Color(31, 41, 55));
         jMenu4.setText("Permisos");
         jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -142,6 +168,8 @@ public class MainFrame extends javax.swing.JFrame {
 
         jMenuBar2.add(jMenu4);
 
+        jMenu5.setBackground(new java.awt.Color(31, 41, 55));
+        jMenu5.setForeground(new java.awt.Color(31, 41, 55));
         jMenu5.setText("Reportes");
         jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
@@ -167,7 +195,13 @@ public class MainFrame extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        // TODO add your handling code here:
+        //Oculta ventana principal
+        this.setVisible(false); 
+        
+        Login lo = new Login(this, true); // this = tu JFrame principal
+        lo.setVisible(true);
+        //Muestra ventana principal
+        this.setVisible(true); 
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
@@ -204,6 +238,17 @@ public class MainFrame extends javax.swing.JFrame {
         JpContenedor.repaint();
         
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+         
+        Turno turno = new Turno();
+
+        JpContenedor.removeAll();
+        JpContenedor.setLayout(new java.awt.BorderLayout()); 
+        JpContenedor.add(turno, java.awt.BorderLayout.CENTER);
+        JpContenedor.revalidate();
+        JpContenedor.repaint();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -242,6 +287,7 @@ public class MainFrame extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JpContenedor;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
@@ -254,11 +300,9 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
     private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
     private javax.swing.JMenuItem jMenuItem9;

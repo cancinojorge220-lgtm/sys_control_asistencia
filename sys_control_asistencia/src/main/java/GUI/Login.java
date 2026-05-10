@@ -4,6 +4,8 @@
  */
 package GUI;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alvar
@@ -17,6 +19,8 @@ public class Login extends javax.swing.JDialog {
         super(parent, modal);
         //System.out.println("-- "+getClass().getResource("/IMG/logo.jpeg"));
         initComponents();
+        
+        //FUNCION PARA CENTRA VENTANA
         this.setLocationRelativeTo(null);
     }
 
@@ -33,7 +37,7 @@ public class Login extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jPasswordField1 = new javax.swing.JPasswordField();
+        jPassContrasenia = new javax.swing.JPasswordField();
         JTextUsuario = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
@@ -64,9 +68,9 @@ public class Login extends javax.swing.JDialog {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("Usuario:");
 
-        jPasswordField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPasswordField1.setText("CONTROL DE ASISTENCIA");
-        jPasswordField1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPassContrasenia.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPassContrasenia.setText("CONTROL DE ASISTENCIA");
+        jPassContrasenia.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         JTextUsuario.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -100,7 +104,7 @@ public class Login extends javax.swing.JDialog {
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPassContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(JTextUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(48, 48, 48))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -133,7 +137,7 @@ public class Login extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPasswordField1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPassContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(65, 65, 65)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(70, Short.MAX_VALUE))
@@ -155,7 +159,17 @@ public class Login extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        dispose();
+        //FUNCION PARA CERRAR VENTANA LOGIN
+        if(JTextUsuario.getText().equals("admin") && jPassContrasenia.getText().equals("123") )
+        {
+            dispose(); //CERRAR VENTANA ACTUAL
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Usuario o Contraseña incorrecta");
+                    
+        }
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -208,6 +222,6 @@ public class Login extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPasswordField jPasswordField1;
+    private javax.swing.JPasswordField jPassContrasenia;
     // End of variables declaration//GEN-END:variables
 }
