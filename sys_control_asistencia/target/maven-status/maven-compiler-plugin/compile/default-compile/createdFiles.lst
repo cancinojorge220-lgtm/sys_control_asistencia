@@ -1,12 +1,15 @@
-com\mycompany\sys_control_asistencia\Empleado.class
+Data\EMPLEADO.class
+Data\PERMISO.class
 GUI\Empleado$1.class
 GUI\MainFrame$5.class
+Data\USUARIO.class
 GUI\Empleado$3.class
 GUI\Registro_Turno$3$1.class
 GUI\Reporte$1.class
 GUI\Inicio.class
 GUI\Registro_Empleado$1.class
 GUI\Registro_Turno$2.class
+Data\ASISTENCIA.class
 GUI\Turno$2.class
 GUI\Registro_Turno$3.class
 GUI\Registro_Empleado$3.class
@@ -17,6 +20,8 @@ GUI\MainFrame$6.class
 GUI\Empleado$2.class
 GUI\Registro_Empleado$2.class
 GUI\MainFrame$1.class
+Data\ROL.class
+Data\TURNO.class
 GUI\Login$2$1.class
 GUI\Login$2.class
 GUI\MainFrame$4.class
@@ -32,5 +37,4 @@ GUI\Marcar_Asistencia.class
 GUI\Registro_Empleado.class
 GUI\Turno$1.class
 GUI\Turno.class
-com\mycompany\sys_control_asistencia\Turno.class
 GUI\Empleado.class
