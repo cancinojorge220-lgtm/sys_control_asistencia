@@ -50,16 +50,17 @@ public class MainFrame extends javax.swing.JFrame {
         JpContenedor = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jMenuBar2 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        mbSistema = new javax.swing.JMenu();
+        miInicio = new javax.swing.JMenuItem();
+        miCerrarSesion = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        miEmpleados = new javax.swing.JMenuItem();
+        miTurnos = new javax.swing.JMenuItem();
+        miRoles = new javax.swing.JMenuItem();
         jMenu3 = new javax.swing.JMenu();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        miMarcarAsistencias = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        miSolicitudes = new javax.swing.JMenuItem();
         jMenu5 = new javax.swing.JMenu();
         jMenuItem8 = new javax.swing.JMenuItem();
 
@@ -99,48 +100,56 @@ public class MainFrame extends javax.swing.JFrame {
                 .addContainerGap(130, Short.MAX_VALUE))
         );
 
-        jMenu1.setBackground(new java.awt.Color(31, 41, 55));
-        jMenu1.setForeground(new java.awt.Color(31, 41, 55));
-        jMenu1.setText("Sistema");
-        jMenu1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        mbSistema.setBackground(new java.awt.Color(31, 41, 55));
+        mbSistema.setForeground(new java.awt.Color(31, 41, 55));
+        mbSistema.setText("Sistema");
+        mbSistema.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMenuItem9.setText("Inicio");
-        jMenuItem9.addActionListener(new java.awt.event.ActionListener() {
+        miInicio.setText("Inicio");
+        miInicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem9ActionPerformed(evt);
+                miInicioActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem9);
+        mbSistema.add(miInicio);
 
-        jMenuItem1.setText("Cerrar Sesión");
-        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+        miCerrarSesion.setText("Cerrar Sesión");
+        miCerrarSesion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem1ActionPerformed(evt);
+                miCerrarSesionActionPerformed(evt);
             }
         });
-        jMenu1.add(jMenuItem1);
+        mbSistema.add(miCerrarSesion);
 
-        jMenuBar2.add(jMenu1);
+        jMenuBar2.add(mbSistema);
 
         jMenu2.setBackground(new java.awt.Color(31, 41, 55));
         jMenu2.setText("Gestión");
         jMenu2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMenuItem3.setText("Empleados");
-        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+        miEmpleados.setText("Empleados");
+        miEmpleados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem3ActionPerformed(evt);
+                miEmpleadosActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem3);
+        jMenu2.add(miEmpleados);
 
-        jMenuItem4.setText("Turnos");
-        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+        miTurnos.setText("Turnos");
+        miTurnos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem4ActionPerformed(evt);
+                miTurnosActionPerformed(evt);
             }
         });
-        jMenu2.add(jMenuItem4);
+        jMenu2.add(miTurnos);
+
+        miRoles.setText("Roles");
+        miRoles.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miRolesActionPerformed(evt);
+            }
+        });
+        jMenu2.add(miRoles);
 
         jMenuBar2.add(jMenu2);
 
@@ -149,13 +158,13 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu3.setText("Asistencia");
         jMenu3.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMenuItem5.setText("Marcar Asistencias");
-        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+        miMarcarAsistencias.setText("Marcar Asistencias");
+        miMarcarAsistencias.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jMenuItem5ActionPerformed(evt);
+                miMarcarAsistenciasActionPerformed(evt);
             }
         });
-        jMenu3.add(jMenuItem5);
+        jMenu3.add(miMarcarAsistencias);
 
         jMenuBar2.add(jMenu3);
 
@@ -164,8 +173,13 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu4.setText("Permisos");
         jMenu4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
-        jMenuItem7.setText("Solicitudes");
-        jMenu4.add(jMenuItem7);
+        miSolicitudes.setText("Solicitudes");
+        miSolicitudes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                miSolicitudesActionPerformed(evt);
+            }
+        });
+        jMenu4.add(miSolicitudes);
 
         jMenuBar2.add(jMenu4);
 
@@ -195,7 +209,7 @@ public class MainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+    private void miCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCerrarSesionActionPerformed
         //Oculta ventana principal
         this.setVisible(false); 
         
@@ -203,9 +217,9 @@ public class MainFrame extends javax.swing.JFrame {
         lo.setVisible(true);
         //Muestra ventana principal
         this.setVisible(true); 
-    }//GEN-LAST:event_jMenuItem1ActionPerformed
+    }//GEN-LAST:event_miCerrarSesionActionPerformed
 
-    private void jMenuItem9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem9ActionPerformed
+    private void miInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miInicioActionPerformed
         // TODO add your handling code here:
         //Inicio inicio = new Inicio();
         Inicio inicio = new Inicio();
@@ -215,9 +229,9 @@ public class MainFrame extends javax.swing.JFrame {
         JpContenedor.add(inicio, java.awt.BorderLayout.CENTER);
         JpContenedor.revalidate();
         JpContenedor.repaint();
-    }//GEN-LAST:event_jMenuItem9ActionPerformed
+    }//GEN-LAST:event_miInicioActionPerformed
 
-    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+    private void miEmpleadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miEmpleadosActionPerformed
         // TODO add your handling code here:
         Empleado empleado = new Empleado();
 
@@ -226,9 +240,9 @@ public class MainFrame extends javax.swing.JFrame {
         JpContenedor.add(empleado, java.awt.BorderLayout.CENTER);
         JpContenedor.revalidate();
         JpContenedor.repaint();
-    }//GEN-LAST:event_jMenuItem3ActionPerformed
+    }//GEN-LAST:event_miEmpleadosActionPerformed
 
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+    private void miMarcarAsistenciasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miMarcarAsistenciasActionPerformed
         // TODO add your handling code here:
         Marcar_Asistencia marcar_asistenica = new Marcar_Asistencia();
 
@@ -238,9 +252,9 @@ public class MainFrame extends javax.swing.JFrame {
         JpContenedor.revalidate();
         JpContenedor.repaint();
         
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
+    }//GEN-LAST:event_miMarcarAsistenciasActionPerformed
 
-    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+    private void miTurnosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miTurnosActionPerformed
          
         Turno turno = new Turno();
 
@@ -249,7 +263,35 @@ public class MainFrame extends javax.swing.JFrame {
         JpContenedor.add(turno, java.awt.BorderLayout.CENTER);
         JpContenedor.revalidate();
         JpContenedor.repaint();
-    }//GEN-LAST:event_jMenuItem4ActionPerformed
+    }//GEN-LAST:event_miTurnosActionPerformed
+
+    private void miSolicitudesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miSolicitudesActionPerformed
+        // TODO add your handling code here:
+        Permiso permiso = new Permiso();
+
+        JpContenedor.removeAll();
+        JpContenedor.setLayout(new java.awt.BorderLayout()); 
+        JpContenedor.add(permiso, java.awt.BorderLayout.CENTER);
+        JpContenedor.revalidate();
+        JpContenedor.repaint();
+        
+        
+    }//GEN-LAST:event_miSolicitudesActionPerformed
+
+    private void miRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miRolesActionPerformed
+        // TODO add your handling code here:
+        
+        Roles roles = new Roles();
+
+        JpContenedor.removeAll();
+        JpContenedor.setLayout(new java.awt.BorderLayout()); 
+        JpContenedor.add(roles, java.awt.BorderLayout.CENTER);
+        JpContenedor.revalidate();
+        JpContenedor.repaint();
+        
+        
+        
+    }//GEN-LAST:event_miRolesActionPerformed
 
     /**
      * @param args the command line arguments
@@ -289,7 +331,6 @@ public class MainFrame extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel JpContenedor;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
@@ -297,15 +338,17 @@ public class MainFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar2;
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem10;
     private javax.swing.JMenuItem jMenuItem11;
     private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem7;
     private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
+    private javax.swing.JMenu mbSistema;
+    private javax.swing.JMenuItem miCerrarSesion;
+    private javax.swing.JMenuItem miEmpleados;
+    private javax.swing.JMenuItem miInicio;
+    private javax.swing.JMenuItem miMarcarAsistencias;
+    private javax.swing.JMenuItem miRoles;
+    private javax.swing.JMenuItem miSolicitudes;
+    private javax.swing.JMenuItem miTurnos;
     // End of variables declaration//GEN-END:variables
 }

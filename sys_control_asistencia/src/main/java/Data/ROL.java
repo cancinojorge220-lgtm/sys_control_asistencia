@@ -10,14 +10,26 @@ package Data;
  */
 public class ROL {
     private String IDRol;
-    private String Nombre ;
+    private String Nombre;
+    private String Descripcion;
     private boolean PuedeEditarAsistencia;
 
-    public ROL(String IDRol, String Nombre, boolean PuedeEditarAsistencia) {
+    public ROL(String IDRol, String Nombre, String Descripcion, boolean PuedeEditarAsistencia) {
         this.IDRol = IDRol;
         this.Nombre = Nombre;
+        this.Descripcion = Descripcion;
         this.PuedeEditarAsistencia = PuedeEditarAsistencia;
     }
+
+    public String getDescripcion() {
+        return Descripcion;
+    }
+
+    public void setDescripcion(String Descripcion) {
+        this.Descripcion = Descripcion;
+    }
+
+    
 
     public void setIDRol(String IDRol) {
         this.IDRol = IDRol;
