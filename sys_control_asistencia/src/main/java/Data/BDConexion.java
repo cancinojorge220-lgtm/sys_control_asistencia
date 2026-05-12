@@ -22,10 +22,6 @@ public class BDConexion {
     String pass="root";
     
     //atributos de los objetos de conexion.
-
-   
-       
-    // Objeto conexión
     private Connection cnx;
 
     // Método para conectar

@@ -1,26 +1,57 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
+
 package GUI;
 
 import Data.BDConexion;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import javax.swing.table.DefaultTableModel;
+import java.sql.*;
 
-/**
- *
- * @author alvar
- */
 public class Roles extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Roles
-     */
     public Roles() {
         initComponents();
+        listarRoles(); 
     }
+    
+    
+    public void listarRoles() {
+        // DIBUJAR TABLA
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("Nombre");
+        modelo.addColumn("Descripción");
+        modelo.addColumn("Permiso");
+
+        // CONSULTA A LA BD
+        String sql = "SELECT Nombre, Descripcion, PuedeEditarAsistencia FROM rol";
+
+        BDConexion conn = new BDConexion();
+
+        try {
+            conn.ConectarBD();
+            
+            Statement st = conn.getCnx().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            // CARGAR DATOS DE MySQL
+            while (rs.next()) {
+                Object[] fila = new Object[3];
+                fila[0] = rs.getString("Nombre");
+                fila[1] = rs.getString("Descripcion");
+                fila[2] = rs.getBoolean("PuedeEditarAsistencia") ? "Editor" : "Solo Lectura";
+                modelo.addRow(fila);
+            }
+
+            // ASIGNAR A JTable
+            tablaRoles.setModel(modelo);
+
+        } catch (SQLException e) {
+            System.out.println("Error al listar roles: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -125,10 +156,11 @@ public class Roles extends javax.swing.JPanel {
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("Permisos de administrador:");
 
+        cbEditorRoles.setBackground(new java.awt.Color(31, 41, 55));
         cbEditorRoles.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         cbEditorRoles.setForeground(new java.awt.Color(255, 255, 255));
         cbEditorRoles.setText("Editor");
-        cbEditorRoles.setBorder(null);
+        cbEditorRoles.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -218,54 +250,57 @@ public class Roles extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnGuardarRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarRolesActionPerformed
-        // TODO add your handling code here:
        
     String Nombre = txtNombreRoles.getText();
     String Descripcion = txtDescripcionRoles.getText();
     boolean PuedeEditarAsistencia = cbEditorRoles.isSelected();
-
+    
     System.out.println(Nombre+" , "+Descripcion+" , "+PuedeEditarAsistencia);
-
+    
+    String IdRol = Nombre.toLowerCase().replace(" ", "_");
+    
     BDConexion conn = new BDConexion();
-
     PreparedStatement ps;
     int result;
     String sql;
 
     try {
-
-        // ABRIR CONEXIÓN
+        // CONEXIÓN ABIERTA
         conn.ConectarBD();
-
+        
+        // INSERTAR EN TABLA MYSQL
         sql = "INSERT INTO rol (IdRol,Nombre,Descripcion,PuedeEditarAsistencia) VALUES (?,?,?,?)";
-
         ps = conn.getCnx().prepareStatement(sql);
-
-        ps.setInt(1, 1);
+        
+        ps.setString(1, IdRol);
         ps.setString(2, Nombre);
         ps.setString(3, Descripcion);
         ps.setBoolean(4, PuedeEditarAsistencia);
-
+        
         result = ps.executeUpdate();
 
         if(result > 0){
-            System.out.println("Registro guardado");
+            javax.swing.JOptionPane.showMessageDialog(null, "¡Registro guardado!");
+            
+            // CARGAR DATOS EN LA TABLA
+            listarRoles(); 
+            
+            // LIMPIAR CASILLEROS
+            txtNombreRoles.setText("");
+            txtDescripcionRoles.setText("");
+            cbEditorRoles.setSelected(false);            
         }
 
-    } catch (SQLException e) {
-
-        System.out.println("Error de conexión");
-        e.printStackTrace();
-    }
-        
-        
+        } catch (SQLException e) {
+            javax.swing.JOptionPane.showMessageDialog(null, "Error de conexión o registro duplicado");
+            e.printStackTrace();
+        }
+                
     }//GEN-LAST:event_btnGuardarRolesActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnEditarRoles;
-    private javax.swing.JButton btnEliminar;
-    private javax.swing.JButton btnEliminar1;
     private javax.swing.JButton btnEliminarRoles;
     private javax.swing.JButton btnGuardarRoles;
     private javax.swing.JCheckBox cbEditorRoles;
