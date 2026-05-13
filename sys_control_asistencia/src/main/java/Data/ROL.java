@@ -9,13 +9,13 @@ package Data;
  * @author alvar
  */
 public class ROL {
-    private String IDRol;
+    //private String IDRol;
     private String Nombre;
     private String Descripcion;
     private boolean PuedeEditarAsistencia;
 
-    public ROL(String IDRol, String Nombre, String Descripcion, boolean PuedeEditarAsistencia) {
-        this.IDRol = IDRol;
+    public ROL( String Nombre, String Descripcion, boolean PuedeEditarAsistencia) {
+        
         this.Nombre = Nombre;
         this.Descripcion = Descripcion;
         this.PuedeEditarAsistencia = PuedeEditarAsistencia;
@@ -31,10 +31,7 @@ public class ROL {
 
     
 
-    public void setIDRol(String IDRol) {
-        this.IDRol = IDRol;
-    }
-
+   
     public void setNombre(String Nombre) {
         this.Nombre = Nombre;
     }
@@ -43,10 +40,7 @@ public class ROL {
         this.PuedeEditarAsistencia = PuedeEditarAsistencia;
     }
 
-    public String getIDRol() {
-        return IDRol;
-    }
-
+  
     public String getNombre() {
         return Nombre;
     }

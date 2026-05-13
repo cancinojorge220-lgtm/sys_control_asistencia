@@ -143,14 +143,15 @@ public class Turno extends javax.swing.JPanel {
 
     private void btnRegistrarTurnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarTurnoActionPerformed
         // TODO add your handling code here:
-        
-        //Registro_Turno registro_turno = new Registro_Turno();
-        
-        //registro_turno.setVisible(true);
+
+        java.awt.Frame frame =(java.awt.Frame) javax.swing.SwingUtilities.getWindowAncestor(this);
+        frame.setVisible(false);
+       
         Registro_Turno rt = new Registro_Turno((java.awt.Frame) javax.swing.SwingUtilities.getWindowAncestor(this),true);
         rt.setLocationRelativeTo(null);
         rt.setVisible(true);
         
+        frame.setVisible(true);
     }//GEN-LAST:event_btnRegistrarTurnoActionPerformed
 
 

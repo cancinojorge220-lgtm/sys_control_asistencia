@@ -43,7 +43,6 @@ public class Registro_Turno extends javax.swing.JDialog {
         jSpinner2 = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setUndecorated(true);
 
         jPanel1.setBackground(new java.awt.Color(31, 41, 55));
         jPanel1.setForeground(new java.awt.Color(255, 255, 255));

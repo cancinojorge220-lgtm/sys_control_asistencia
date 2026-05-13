@@ -269,13 +269,14 @@ public class Roles extends javax.swing.JPanel {
         conn.ConectarBD();
         
         // INSERTAR EN TABLA MYSQL
-        sql = "INSERT INTO rol (IdRol,Nombre,Descripcion,PuedeEditarAsistencia) VALUES (?,?,?,?)";
+
+        sql = "INSERT INTO rol (Nombre,Descripcion,PuedeEditarAsistencia) VALUES (?,?,?)";
+
         ps = conn.getCnx().prepareStatement(sql);
-        
-        ps.setString(1, IdRol);
-        ps.setString(2, Nombre);
-        ps.setString(3, Descripcion);
-        ps.setBoolean(4, PuedeEditarAsistencia);
+
+        ps.setString(1, Nombre);
+        ps.setString(2, Descripcion);
+        ps.setBoolean(3, PuedeEditarAsistencia);
         
         result = ps.executeUpdate();
 

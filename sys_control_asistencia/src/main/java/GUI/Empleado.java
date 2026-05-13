@@ -145,6 +145,11 @@ public class Empleado extends javax.swing.JPanel {
 
     private void btnRegistrarEmpleadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRegistrarEmpleadoActionPerformed
         // TODO add your handling code here:
+         java.awt.Frame frame =(java.awt.Frame) javax.swing.SwingUtilities.getWindowAncestor(this);
+
+        frame.setVisible(false);
+        
+        
         
         Registro_Empleado dialog = new Registro_Empleado(
         (java.awt.Frame) javax.swing.SwingUtilities.getWindowAncestor(this),
@@ -152,7 +157,7 @@ public class Empleado extends javax.swing.JPanel {
         );
         dialog.setLocationRelativeTo(this);
         dialog.setVisible(true);
-        
+        frame.setVisible(true);
     }//GEN-LAST:event_btnRegistrarEmpleadoActionPerformed
 
 
