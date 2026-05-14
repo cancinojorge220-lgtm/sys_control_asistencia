@@ -4,17 +4,71 @@
  */
 package GUI;
 
+import Data.BDConexion;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author alvar
  */
 public class Empleado extends javax.swing.JPanel {
 
-    /**
-     * Creates new form Empleado
-     */
+
     public Empleado() {
         initComponents();
+        listarEmpleados();
+    }
+    
+    public void listarEmpleados() {
+        DefaultTableModel modelo = new DefaultTableModel();
+        modelo.addColumn("DNI");
+        modelo.addColumn("Nombres");
+        modelo.addColumn("Apellidos");
+        modelo.addColumn("FechaNacimiento");
+        modelo.addColumn("Cargo");
+        modelo.addColumn("Telefono");
+        modelo.addColumn("Estado");
+        modelo.addColumn("Direccion");
+        modelo.addColumn("Rol");
+        modelo.addColumn("Turno");
+        
+        // CONSULTA A LA BD
+        String sql = "SELECT e.DNI, e.Nombres, e.Apellidos, e.FechaNacimiento, e.Cargo, e.Telefono, e.Estado, e.Direccion, r.Nombre AS Nombre_Rol, t.Nombre AS Nombre_Turno FROM empleado e INNER JOIN rol r ON e.IdRol = r.IdRol INNER JOIN turno t ON e.IdTurno = t.IdTurno";
+
+        BDConexion conn = new BDConexion();
+
+        try {
+            conn.ConectarBD();
+            
+            Statement st = conn.getCnx().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            // CARGAR DATOS DE MySQL
+            while (rs.next()) {
+                Object[] fila = new Object[10];
+                
+                fila[0] = rs.getString("DNI");
+                fila[1] = rs.getString("Nombres");
+                fila[2] = rs.getString("Apellidos");
+                fila[3] = rs.getDate("FechaNacimiento"); 
+                fila[4] = rs.getString("Cargo");
+                fila[5] = rs.getString("Telefono");
+
+                fila[6] = rs.getBoolean("Estado") ? "Activo" : "Inactivo";
+                fila[7] = rs.getString("Direccion");
+                
+                fila[8] = rs.getString("Nombre_Rol");
+                fila[9] = rs.getString("Nombre_Turno");
+
+                modelo.addRow(fila);
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al listar roles: " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 
     /**

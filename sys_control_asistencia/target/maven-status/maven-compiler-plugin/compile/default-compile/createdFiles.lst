@@ -17,7 +17,6 @@ GUI\Registro_Empleado$2.class
 GUI\MainFrame$3.class
 com\mycompany\sys_control_asistencia\Sys_control_asistencia.class
 GUI\Permiso$3.class
-GUI\Registro_Empleado$3$1.class
 GUI\Roles.class
 GUI\Login$1.class
 GUI\Login.class
@@ -39,11 +38,13 @@ GUI\MainFrame$1.class
 Data\ROL.class
 Data\TURNO.class
 GUI\MainFrame$8.class
+GUI\Registro_Empleado$4.class
 GUI\Login$2$1.class
 GUI\Permiso$4.class
 GUI\Login$2.class
 GUI\MainFrame$4.class
 GUI\MainFrame.class
+GUI\Registro_Empleado$4$1.class
 GUI\Registro_Turno$1.class
 GUI\Turno$3.class
 GUI\Permiso$1.class
