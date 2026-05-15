@@ -189,6 +189,11 @@ public class MainFrame extends javax.swing.JFrame {
         jMenu5.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jMenuItem8.setText("Generar Reporte");
+        jMenuItem8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem8ActionPerformed(evt);
+            }
+        });
         jMenu5.add(jMenuItem8);
 
         jMenuBar2.add(jMenu5);
@@ -292,6 +297,18 @@ public class MainFrame extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_miRolesActionPerformed
+
+    private void jMenuItem8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem8ActionPerformed
+        // TODO add your handling code here:
+        Generar_Reporte_Asistencia reporte = new Generar_Reporte_Asistencia();
+
+        JpContenedor.removeAll();
+        JpContenedor.setLayout(new java.awt.BorderLayout()); 
+        JpContenedor.add(reporte, java.awt.BorderLayout.CENTER);
+        JpContenedor.revalidate();
+        JpContenedor.repaint();
+        
+    }//GEN-LAST:event_jMenuItem8ActionPerformed
 
     /**
      * @param args the command line arguments
