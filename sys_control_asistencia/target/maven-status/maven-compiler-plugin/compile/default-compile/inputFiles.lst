@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\Data\TURNO.java
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\GUI\Registro_Empleado.java
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\Data\PERMISO.java
@@ -17,3 +18,25 @@ J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asist
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\GUI\Roles.java
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\GUI\Inicio.java
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\GUI\Turno.java
+=======
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\GUI\Turno.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\com\mycompany\sys_control_asistencia\Sys_control_asistencia.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\GUI\Registro_Turno.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\Data\ASISTENCIA.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\GUI\Marcar_Asistencia.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\Data\ROL.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\GUI\Empleado.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\Data\USUARIO.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\Data\BDConexion.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\GUI\MainFrame.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\GUI\Reporte.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\GUI\Login.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\GUI\Registro_Empleado.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\Data\EMPLEADO.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\GUI\Inicio.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\GUI\Permiso.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\Data\TURNO.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\GUI\Roles.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\GUI\Generar_Reporte_Asistencia.java
+C:\Users\David\Desktop\UPN\SUPER-CODE (TRABAJO)\sys_control_asistencia\src\main\java\Data\PERMISO.java
+>>>>>>> fcfd7fae5c1152dfff1bb601aa7ce8113a939843
