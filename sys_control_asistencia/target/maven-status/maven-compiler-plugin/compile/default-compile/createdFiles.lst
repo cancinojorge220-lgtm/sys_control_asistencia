@@ -1,13 +1,11 @@
 Data\EMPLEADO.class
 GUI\MainFrame$7.class
 Data\USUARIO.class
-GUI\Reporte$1.class
 GUI\Inicio.class
 GUI\Roles$1.class
 GUI\Permiso$2.class
 GUI\Permiso.class
 GUI\Registro_Empleado$3.class
-GUI\Reporte.class
 GUI\Registro_Turno.class
 GUI\MainFrame$6.class
 GUI\Empleado$2.class
@@ -27,7 +25,6 @@ Data\PERMISO.class
 GUI\Empleado$1.class
 GUI\MainFrame$5.class
 GUI\Registro_Turno$4$1.class
-Data\BDConexion.class
 GUI\Registro_Empleado$1.class
 GUI\Marcar_Asistencia$1.class
 GUI\Registro_Turno$2.class
@@ -48,6 +45,7 @@ GUI\Login$2.class
 GUI\MainFrame$4.class
 GUI\MainFrame.class
 GUI\Registro_Empleado$4$1.class
+controllers\BDConexion.class
 GUI\Registro_Turno$1.class
 GUI\Turno$3.class
 GUI\Permiso$1.class

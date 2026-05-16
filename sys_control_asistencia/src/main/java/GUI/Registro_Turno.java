@@ -4,7 +4,7 @@
  */
 package GUI;
 
-import Data.BDConexion;
+import controllers.BDConexion;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

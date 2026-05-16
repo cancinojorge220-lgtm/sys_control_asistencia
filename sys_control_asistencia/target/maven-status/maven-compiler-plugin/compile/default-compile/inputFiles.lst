@@ -1,11 +1,10 @@
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\Data\TURNO.java
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\GUI\Registro_Empleado.java
-J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\Data\BDConexion.java
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\Data\PERMISO.java
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\GUI\Empleado.java
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\GUI\Permiso.java
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\Data\ROL.java
-J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\GUI\Reporte.java
+J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\controllers\BDConexion.java
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\Data\EMPLEADO.java
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\GUI\MainFrame.java
 J:\UPN\ciclo 5\programacion orientado a objetos\PROYECTO FINAL\sys_control_asistencia\sys_control_asistencia\src\main\java\com\mycompany\sys_control_asistencia\Sys_control_asistencia.java

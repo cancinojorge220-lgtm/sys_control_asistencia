@@ -153,7 +153,7 @@ public class Marcar_Asistencia extends javax.swing.JPanel {
         String DNIMarcado = txtDNIMarcado.getText();
         
     }//GEN-LAST:event_btnMarcarAsistenciaActionPerformed
-
+     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnMarcarAsistencia;
