@@ -43,7 +43,6 @@ public class Registro_Turno extends javax.swing.JDialog {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtDiasLaborales = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
@@ -59,6 +58,7 @@ public class Registro_Turno extends javax.swing.JDialog {
         cbMinSalida = new javax.swing.JComboBox<>();
         cbAMPMEntrada = new javax.swing.JComboBox<>();
         cbAMPMSalida = new javax.swing.JComboBox<>();
+        cbDiasLaborales = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -99,8 +99,6 @@ public class Registro_Turno extends javax.swing.JDialog {
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel3.setText("Hora de Entrada");
         jLabel3.setPreferredSize(new java.awt.Dimension(130, 20));
-
-        txtDiasLaborales.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -173,6 +171,9 @@ public class Registro_Turno extends javax.swing.JDialog {
 
         cbAMPMSalida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "AM", "PM" }));
 
+        cbDiasLaborales.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Lun - Vie", "Lun - Sáb", "Lun - Mié - Vie", "Mar - Jue", "Sáb - Dom" }));
+        cbDiasLaborales.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -206,11 +207,6 @@ public class Registro_Turno extends javax.swing.JDialog {
                                 .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 172, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtDiasLaborales, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(cbTolerancia, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(txtNombreTurno, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -229,7 +225,12 @@ public class Registro_Turno extends javax.swing.JDialog {
                                         .addGap(26, 26, 26)
                                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                             .addComponent(cbAMPMEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(cbAMPMSalida, 0, 1, Short.MAX_VALUE))))))
+                                            .addComponent(cbAMPMSalida, 0, 1, Short.MAX_VALUE)))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(cbTolerancia, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(cbDiasLaborales, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(36, 36, 36))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -269,12 +270,12 @@ public class Registro_Turno extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtDiasLaborales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(43, 43, 43)
+                    .addComponent(cbDiasLaborales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(44, 44, 44)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -323,19 +324,14 @@ public class Registro_Turno extends javax.swing.JDialog {
 
     String hora12Salida = horaS + ":" + minutoS + " " + ampmS;
 
-    LocalTime horaConvertidaSalida =
-            LocalTime.parse(hora12Salida, formato12);
+    LocalTime horaConvertidaSalida =LocalTime.parse(hora12Salida, formato12);
 
-    String HoraSalida =
-            horaConvertidaSalida.format(formato24);
+    String HoraSalida =horaConvertidaSalida.format(formato24);
 
 
     // ---------- OTROS DATOS ----------
-    String Tolerancia =
-            cbTolerancia.getSelectedItem().toString();
-
-    String DiasLaborales =
-            txtDiasLaborales.getText();
+    String Tolerancia =cbTolerancia.getSelectedItem().toString();
+    String DiasLaborales =cbDiasLaborales.getSelectedItem().toString();
 
 
     // ---------- RESULTADO ----------
@@ -367,24 +363,28 @@ public class Registro_Turno extends javax.swing.JDialog {
         if(result > 0){
             javax.swing.JOptionPane.showMessageDialog(null, "¡Registro guardado!");
             
-            // CARGAR DATOS EN LA TABLA
             
-            txtNombreTurno.setText("");
-            txtDiasLaborales.setText("");
             // LIMPIAR CASILLEROS
-                    
+            txtNombreTurno.setText("");
+            cbDiasLaborales.setSelectedItem(1);
+            
+            
+           
         }                                                 
 
         } catch (SQLException e) {                                     
             javax.swing.JOptionPane.showMessageDialog(null, "Error de conexión o registro duplicado");
             e.printStackTrace();
         }
+    
+    
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         dispose();
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void cbMinEntradaComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_cbMinEntradaComponentAdded
@@ -437,6 +437,7 @@ public class Registro_Turno extends javax.swing.JDialog {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> cbAMPMEntrada;
     private javax.swing.JComboBox<String> cbAMPMSalida;
+    private javax.swing.JComboBox<String> cbDiasLaborales;
     private javax.swing.JComboBox<String> cbHoraEntrada;
     private javax.swing.JComboBox<String> cbHoraSalida;
     private javax.swing.JComboBox<String> cbMinEntrada;
@@ -456,7 +457,6 @@ public class Registro_Turno extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField txtDiasLaborales;
     private javax.swing.JTextField txtNombreTurno;
     // End of variables declaration//GEN-END:variables
 }

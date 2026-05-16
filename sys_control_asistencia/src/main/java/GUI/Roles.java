@@ -9,10 +9,11 @@ import javax.swing.table.DefaultTableModel;
 import java.sql.*;
 
 public class Roles extends javax.swing.JPanel {
-
+    
     public Roles() {
         initComponents();
         listarRoles(); 
+        
     }
     
     
