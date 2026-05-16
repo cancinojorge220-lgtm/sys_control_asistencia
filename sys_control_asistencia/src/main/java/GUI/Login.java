@@ -5,9 +5,6 @@ import javax.swing.JOptionPane;
 
 public class Login extends javax.swing.JDialog {
 
-    /**
-     * Creates new form Login
-     */
     public Login(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         //System.out.println("-- "+getClass().getResource("/IMG/logo.jpeg"));
@@ -63,7 +60,6 @@ public class Login extends javax.swing.JDialog {
         jLabel3.setText("Usuario:");
 
         jPassContrasenia.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jPassContrasenia.setText("CONTROL DE ASISTENCIA");
         jPassContrasenia.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPassContrasenia.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

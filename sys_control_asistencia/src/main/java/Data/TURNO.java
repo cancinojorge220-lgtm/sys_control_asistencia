@@ -73,14 +73,10 @@ public class TURNO {
     public void setHoraSalida(Date horaSalida) {
         this.horaSalida = horaSalida;
     }
-    //Creacion de metodos Turno
-    public void crearTurno() {
-        
+    
+    @Override
+    public String toString() {
+        return this.Nombre + " - " + this.diasLaborales;
     }
-    public void editarTurno() {
-        
-    }
-    public void EliminarTurno() {
-        
-    }
+    
 }

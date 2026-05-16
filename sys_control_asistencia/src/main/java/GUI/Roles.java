@@ -14,8 +14,7 @@ public class Roles extends javax.swing.JPanel {
         initComponents();
         listarRoles(); 
     }
-    
-    
+        
     public void listarRoles() {
         // DIBUJAR TABLA
         DefaultTableModel modelo = new DefaultTableModel();
@@ -254,8 +253,7 @@ public class Roles extends javax.swing.JPanel {
         String Nombre = txtNombreRoles.getText();
         String Descripcion = txtDescripcionRoles.getText();
         boolean PuedeEditarAsistencia = cbEditorRoles.isSelected();
-        String IdRol = Nombre.toLowerCase().replace(" ", "_");
-
+        
         BDConexion conn = new BDConexion();
         PreparedStatement ps;
         int result;
