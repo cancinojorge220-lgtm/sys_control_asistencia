@@ -4,6 +4,12 @@
  */
 package GUI;
 
+import Data.BDConexion;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author alvar
@@ -13,10 +19,57 @@ public class Turno extends javax.swing.JPanel {
     /**
      * Creates new form Empleado
      */
+    // Variables globales
+    DefaultTableModel modelo;
     public Turno() {
         initComponents();
+        // Obtenemos modelo de la tabla ya existente
+        modelo = (DefaultTableModel) tablaTurno.getModel();
+        listarTurnos();
     }
+    public void listarTurnos() {
 
+        // LIMPIAR FILAS ANTERIORES
+        modelo.setRowCount(0);
+
+        // CONSULTA SQL
+        String sql = "SELECT nombre, horaEntrada, tolerancia, diasLaborales, horaSalida FROM turno";
+
+        BDConexion conn = new BDConexion();
+
+        try {
+
+            conn.ConectarBD();
+
+            Statement st = conn.getCnx().createStatement();
+
+            ResultSet rs = st.executeQuery(sql);
+
+            // RECORRER RESULTADOS
+            while (rs.next()) {
+
+                Object[] fila = new Object[5];
+
+                fila[0] = rs.getString("nombre");
+                fila[1] = rs.getTime("horaEntrada");
+                fila[2] = rs.getInt("tolerancia")+ " min"; 
+                fila[3] = rs.getString("diasLaborales");
+                fila[4] = rs.getTime("horaSalida");
+
+                modelo.addRow(fila);
+            }
+
+            // CERRAR RECURSOS
+            rs.close();
+            st.close();
+            conn.getCnx().close();
+
+        } catch (SQLException e) {
+
+            System.out.println("Error al listar turnos: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -29,7 +82,7 @@ public class Turno extends javax.swing.JPanel {
         jTextField1 = new javax.swing.JTextField();
         btnRegistrarTurno = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        JtEmpleados = new javax.swing.JTable();
+        tablaTurno = new javax.swing.JTable();
         btnEliminar = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
@@ -57,18 +110,18 @@ public class Turno extends javax.swing.JPanel {
             }
         });
 
-        JtEmpleados.setModel(new javax.swing.table.DefaultTableModel(
+        tablaTurno.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null},
-                {null, null, null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "ID", "NOMBRE TURNO", "HORA ENTRADA", "HORA SALIDA", "TOLERANCIA", "ESTADO"
+                "NOMBRE TURNO", "HORA ENTRADA", "TOLERANCIA", "DÍAS LABORALES", "HORA SALIDA"
             }
         ));
-        jScrollPane1.setViewportView(JtEmpleados);
+        jScrollPane1.setViewportView(tablaTurno);
 
         btnEliminar.setBackground(new java.awt.Color(29, 78, 216));
         btnEliminar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -150,18 +203,19 @@ public class Turno extends javax.swing.JPanel {
         Registro_Turno rt = new Registro_Turno((java.awt.Frame) javax.swing.SwingUtilities.getWindowAncestor(this),true);
         rt.setLocationRelativeTo(null);
         rt.setVisible(true);
-        
+        listarTurnos();
         frame.setVisible(true);
+        
     }//GEN-LAST:event_btnRegistrarTurnoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable JtEmpleados;
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnRegistrarTurno;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable tablaTurno;
     // End of variables declaration//GEN-END:variables
 }
