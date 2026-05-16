@@ -4,6 +4,12 @@
  */
 package GUI;
 
+import Data.BDConexion;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import javax.swing.DefaultComboBoxModel;
+import Data.EMPLEADO;
 /**
  *
  * @author alvar
@@ -15,8 +21,40 @@ public class Permiso extends javax.swing.JPanel {
      */
     public Permiso() {
         initComponents();
+        cargarEmpleado();
     }
+    public void cargarEmpleado()
+    {
+        DefaultComboBoxModel<EMPLEADO> modeloCombo = new DefaultComboBoxModel<>();
+        // AGREGAMOS EL ID EN EL SELECT
+        String sql = "SELECT DNI, Nombres, Apellidos FROM empleado";
 
+        BDConexion conn = new BDConexion();
+
+        try {
+            conn.ConectarBD();
+            Statement st = conn.getCnx().createStatement();
+            ResultSet rs = st.executeQuery(sql);
+
+            while (rs.next()) {
+                // Extraemos todos los datos, incluido el ID
+                int idDNI = rs.getInt("DNI"); 
+                String nombres = rs.getString("Nombres");
+                String Apellidos = rs.getString("Apellidos");
+                
+
+                // Pasamos el ID al constructor
+                EMPLEADO unEmpleado = new EMPLEADO(idDNI,nombres,Apellidos);
+
+                modeloCombo.addElement(unEmpleado);
+            }
+
+            cbEmpleado.setModel(modeloCombo);
+
+        } catch (SQLException e) {
+            System.out.println("Error al cargar EMPLEADO: " + e.getMessage());
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -102,8 +140,6 @@ public class Permiso extends javax.swing.JPanel {
         jLabel7.setForeground(new java.awt.Color(255, 255, 255));
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel7.setText("Empleado");
-
-        cbEmpleado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(255, 255, 255));
@@ -423,7 +459,7 @@ public class Permiso extends javax.swing.JPanel {
     private javax.swing.JButton btnEditar;
     private javax.swing.JButton btnEliminar;
     private javax.swing.JButton btnGuardar;
-    private javax.swing.JComboBox<String> cbEmpleado;
+    private javax.swing.JComboBox<Data.EMPLEADO> cbEmpleado;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

@@ -1,17 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Data;
 
 import java.util.Date;
 
-/**
- *
- * @author alvar
- */
 public class EMPLEADO {
-    private String DNI;
+    private int DNI;
     private String Nombre;
     private String Apellidos;
     private Date FechaNacimiento;
@@ -23,7 +16,7 @@ public class EMPLEADO {
     private int IdEmpleado;
     private int IdRol;
 
-    public EMPLEADO(String DNI, String Nombre, String Apellidos, Date FechaNacimiento, String Cargo, String Telefono, String Turno, boolean Estado, String Direccion, int IdEmpleado, int IdRol) {
+    public EMPLEADO(int DNI, String Nombre, String Apellidos, Date FechaNacimiento, String Cargo, String Telefono, String Turno, boolean Estado, String Direccion, int IdEmpleado, int IdRol) {
         this.DNI = DNI;
         this.Nombre = Nombre;
         this.Apellidos = Apellidos;
@@ -36,8 +29,14 @@ public class EMPLEADO {
         this.IdEmpleado = IdEmpleado;
         this.IdRol = IdRol;
     }
+    public EMPLEADO(int DNI, String Nombre, String Apellidos)
+    {
+        this.DNI = DNI;
+        this.Nombre = Nombre;
+        this.Apellidos = Apellidos;
+    }
 
-    public String getDNI() {
+    public int getDNI() {
         return DNI;
     }
 
@@ -81,7 +80,7 @@ public class EMPLEADO {
         return IdRol;
     }
 
-    public void setDNI(String DNI) {
+    public void setDNI(int DNI) {
         this.DNI = DNI;
     }
 
@@ -125,4 +124,8 @@ public class EMPLEADO {
         this.IdRol = IdRol;
     }
     
+    @Override
+    public String toString() {
+        return this.Nombre + " "+ this.Apellidos; 
+    }
 }
