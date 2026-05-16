@@ -249,7 +249,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="2"/>
-            <Property name="text" type="java.lang.String" value="ID Permiso"/>
+            <Property name="text" type="java.lang.String" value="ID Empleado"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel6">
