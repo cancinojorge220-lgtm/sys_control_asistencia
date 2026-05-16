@@ -328,7 +328,7 @@ public class Registro_Empleado extends javax.swing.JDialog {
         java.time.LocalDate fechaLocal = java.time.LocalDate.of(anio, mes, dia);
         java.sql.Date fechaNacimiento = java.sql.Date.valueOf(fechaLocal);
         
-        System.out.println(fechaNacimiento);
+        System.out.println(Nombre + " " + Apellido + " " + DNI  + " " + Telefono  + " " +  fechaNacimiento);
         
     }//GEN-LAST:event_jButton1ActionPerformed
 

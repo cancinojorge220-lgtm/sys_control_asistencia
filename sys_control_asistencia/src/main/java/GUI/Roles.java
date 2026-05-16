@@ -251,48 +251,44 @@ public class Roles extends javax.swing.JPanel {
 
     private void btnGuardarRolesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarRolesActionPerformed
        
-    String Nombre = txtNombreRoles.getText();
-    String Descripcion = txtDescripcionRoles.getText();
-    boolean PuedeEditarAsistencia = cbEditorRoles.isSelected();
-    
-    System.out.println(Nombre+" , "+Descripcion+" , "+PuedeEditarAsistencia);
-    
-    String IdRol = Nombre.toLowerCase().replace(" ", "_");
-    
-    BDConexion conn = new BDConexion();
-    PreparedStatement ps;
-    int result;
-    String sql;
+        String Nombre = txtNombreRoles.getText();
+        String Descripcion = txtDescripcionRoles.getText();
+        boolean PuedeEditarAsistencia = cbEditorRoles.isSelected();
+        String IdRol = Nombre.toLowerCase().replace(" ", "_");
 
-    try {
-        // CONEXIÓN ABIERTA
-        conn.ConectarBD();
-        
-        // INSERTAR EN TABLA MYSQL
+        BDConexion conn = new BDConexion();
+        PreparedStatement ps;
+        int result;
+        String sql;
 
-        sql = "INSERT INTO rol (Nombre,Descripcion,PuedeEditarAsistencia) VALUES (?,?,?)";
+        try {
+            // CONEXIÓN ABIERTA
+            conn.ConectarBD();
 
-        ps = conn.getCnx().prepareStatement(sql);
+            // INSERTAR EN TABLA MYSQL
+            sql = "INSERT INTO rol (Nombre,Descripcion,PuedeEditarAsistencia) VALUES (?,?,?)";
 
-        ps.setString(1, Nombre);
-        ps.setString(2, Descripcion);
-        ps.setBoolean(3, PuedeEditarAsistencia);
-        
-        result = ps.executeUpdate();
+            ps = conn.getCnx().prepareStatement(sql);
 
-        if(result > 0){
-            javax.swing.JOptionPane.showMessageDialog(null, "¡Registro guardado!");
-            
-            // CARGAR DATOS EN LA TABLA
-            listarRoles(); 
-            
-            // LIMPIAR CASILLEROS
-            txtNombreRoles.setText("");
-            txtDescripcionRoles.setText("");
-            cbEditorRoles.setSelected(false);            
-        }
+            ps.setString(1, Nombre);
+            ps.setString(2, Descripcion);
+            ps.setBoolean(3, PuedeEditarAsistencia);
 
-        } catch (SQLException e) {
+            result = ps.executeUpdate();
+
+            if(result > 0){
+                javax.swing.JOptionPane.showMessageDialog(null, "¡Registro guardado!");
+
+                // CARGAR DATOS EN LA TABLA
+                listarRoles(); 
+
+                // LIMPIAR CASILLEROS
+                txtNombreRoles.setText("");
+                txtDescripcionRoles.setText("");
+                cbEditorRoles.setSelected(false);            
+            }
+        } 
+        catch (SQLException e) {
             javax.swing.JOptionPane.showMessageDialog(null, "Error de conexión o registro duplicado");
             e.printStackTrace();
         }

@@ -208,12 +208,16 @@ public class MainFrame extends javax.swing.JFrame {
 
     private void miCerrarSesionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miCerrarSesionActionPerformed
         //Oculta ventana principal
-        this.setVisible(false); 
+        int respuesta = javax.swing.JOptionPane.showConfirmDialog(this, "¿Cerrar sesión?");
         
-        Login lo = new Login(this, true); // this = tu JFrame principal
-        lo.setVisible(true);
-        //Muestra ventana principal
-        this.setVisible(true); 
+        if (respuesta == 0) {
+            this.setVisible(false); 
+
+            Login lo = new Login(this, true);
+            lo.setVisible(true);
+
+            this.setVisible(true); 
+        }
     }//GEN-LAST:event_miCerrarSesionActionPerformed
 
     private void miInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_miInicioActionPerformed
