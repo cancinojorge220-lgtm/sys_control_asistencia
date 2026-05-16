@@ -59,6 +59,9 @@ public class Empleado extends javax.swing.JPanel {
 
                 modelo.addRow(fila);
             }
+            
+            JtEmpleados.setModel(modelo);
+            
         } catch (SQLException e) {
             System.out.println("Error al listar roles: " + e.getMessage());
             e.printStackTrace();
