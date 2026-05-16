@@ -152,8 +152,8 @@ public class Marcar_Asistencia extends javax.swing.JPanel {
     private void btnMarcarAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMarcarAsistenciaActionPerformed
         String DNIMarcado = txtDNIMarcado.getText();
         
-        Data.EMPLEADO seleccionado = (Data.EMPLEADO) DNIMarcado;
-        int DNI = seleccionado.getDNI();
+//        Data.EMPLEADO seleccionado = (Data.EMPLEADO) DNIMarcado;
+//        int DNI = seleccionado.getDNI();
     }//GEN-LAST:event_btnMarcarAsistenciaActionPerformed
 
 
